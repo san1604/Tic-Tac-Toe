@@ -1,0 +1,93 @@
+.scoreBoard
+{
+    display: flex;
+    justify-content: space-around;
+    width: 20em;
+    background-color: beige;
+    padding: 1.5em;
+    border-radius: 0.5em;
+    margin: 1.5em;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 1);
+}
+
+.board
+{
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+}
+
+.cell
+{
+    width: 5.5em;
+    height: 5.5em;
+    background-color: aquamarine;
+    border-radius: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s background-color 0.2s;
+    margin: 1em;
+    cursor: pointer;
+}
+
+.cell:hover
+{
+    transform: scale(1.10);
+    background-color: cornflowerblue;
+    .boardTextLabel
+    {
+        color: #FFFFFF;
+        font-weight: 800;
+    }
+}
+
+.boardTextLabel
+{
+    color: red;
+    font-weight: 800;
+}
+
+.trophy {
+    position: fixed;
+    top: 54%;
+    left: 51%;
+    transform: translate(-50%, -50%) scale(0);
+    font-size: 5rem;
+    opacity: 0;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.show-trophy 
+{
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    animation: trophy-bounce 1s ease-in-out infinite;
+}
+
+@keyframes trophy-bounce 
+{
+    0%, 100% { transform: translate(-50%, -50%) scale(1) translateY(0); }
+    50% { transform: translate(-50%, -50%) scale(1.1) translateY(-25px); }
+}
+
+.muted 
+{
+    opacity: 0.5;
+}
+
+.trophy-container
+{
+    display: none;
+    background-color: #fffe8b;
+    width: 8em;
+    height: 8em;
+    position: fixed;
+    top: 43%;
+    left: 43%;
+    z-index: 10;
+    pointer-events: none;
+    border-radius: 77px;
+    border: 2px solid #e3e3e3;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 1);
+}
